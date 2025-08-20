@@ -1,0 +1,1 @@
+import { InputHTMLAttributes } from 'react'; export function Input({className='',...props}:InputHTMLAttributes<HTMLInputElement>&{className?:string}){return <input {...props} className={`input ${className}`} />}
