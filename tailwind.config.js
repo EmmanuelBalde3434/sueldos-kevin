@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: false,   // 👈 fuerza modo claro, sin importar tu sistema
+  darkMode: 'class',   // 👈 fuerza modo claro, sin importar tu sistema
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
