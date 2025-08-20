@@ -1,7 +1,17 @@
-import { ButtonHTMLAttributes } from "react";
-export function Button({ className="", ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { className?: string }) {
-  return <button {...props} className={`btn ${className}`} />;
-}
-export function PrimaryButton({ className="", ...props }: ButtonHTMLAttributes<HTMLButtonElement> & { className?: string }) {
-  return <button {...props} className={`btn btn-primary ${className}`} />;
-}
+import * as React from "react";
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className = "", ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={`px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition ${className}`}
+        {...props}
+      />
+    );
+  }
+);
+
+Button.displayName = "Button";
